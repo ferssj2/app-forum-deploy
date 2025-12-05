@@ -1,59 +1,104 @@
-# AppForumDeploy
+# 🎯 App Forum Deploy - Práctica Git y GitHub
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+Proyecto Angular para practicar Git Flow, Scrum, y despliegue continuo con Vercel.
 
-## Development server
+## 📋 Descripción
 
-To start a local development server, run:
+Esta aplicación simula un foro de Angular y sirve como práctica para:
+- **Git Flow**: Workflow con ramas main, develop, feature, release y hotfix
+- **Scrum**: Gestión de proyectos con Trello
+- **CI/CD**: Despliegue automático con Vercel (staging + producción)
 
-```bash
-ng serve
-```
+## 🚀 Tecnologías
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 19+
+- TypeScript
+- CSS
+- Git & GitHub
+- Vercel (Deployment)
+- Trello (Project Management)
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Instalación
 
 ```bash
-ng generate --help
+# Clonar repositorio
+git clone https://github.com/[TU-USUARIO]/app-forum-deploy.git
+cd app-forum-deploy
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
+npm start
 ```
 
-## Building
+## 🌿 Estructura de Ramas (Git Flow)
 
-To build the project run:
+- `main`: Producción (despliega automáticamente a Vercel)
+- `develop`: Desarrollo/Staging (despliega a entorno de pruebas)
+- `feature/*`: Nuevas funcionalidades
+- `releases/*`: Preparación de versiones
+- `hotfix/*`: Correcciones urgentes en producción
 
+## 📝 Workflow Completo
+
+### Sprint 0: Configuración Inicial ✅
 ```bash
-ng build
+git init
+git add .
+git commit -m "Sprint 0: Proyecto Angular de inicio"
+git branch -M main
+git branch develop
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
+### Sprint 1: Feature Branch
 ```bash
-ng test
+git checkout develop
+git checkout -b feature/mejora-visible
+# ... hacer cambios ...
+git add .
+git commit -m "feat: Añadir header del foro con navegación"
+git push origin feature/mejora-visible
+# Crear PR en GitHub: feature/mejora-visible → develop
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### Hotfix
 ```bash
-ng e2e
+git checkout main
+git checkout -b hotfix/tests-angular
+# ... añadir tests ...
+git add .
+git commit -m "hotfix: Añadir archivos de test faltantes"
+git push origin hotfix/tests-angular
+# Crear PR en GitHub: hotfix/tests-angular → main
+# Merge también a develop
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📊 Tablero Trello
 
-## Additional Resources
+Listas organizadas:
+1. Product Backlog
+2. To Do
+3. In Progress
+4. QA (Deploy a Develop)
+5. Done
+6. Deployed (Main - Producción)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🔗 Enlaces
+
+- **Repositorio**: [GitHub](https://github.com/[TU-USUARIO]/app-forum-deploy)
+- **Producción**: [Vercel Main](https://...)
+- **Staging**: [Vercel Develop](https://...)
+- **Trello**: [Tablero](https://...)
+
+## 📖 Documentación Adicional
+
+- [`retrospectiva.md`](./retrospectiva.md): Aprendizajes y propuestas de mejora
+
+## 👨‍💻 Autor
+
+[Tu Nombre]
+
+## 📄 Licencia
+
+MIT
